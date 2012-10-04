@@ -1,4 +1,4 @@
-Sistema Bancari oFiap
+Sistema Bancario Fiap
 ===================
 
 Trabalho de Java de um Sistema Bancário simples.
