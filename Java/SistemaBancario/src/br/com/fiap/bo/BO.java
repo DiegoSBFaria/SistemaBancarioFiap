@@ -1,5 +1,7 @@
 package br.com.fiap.bo;
 
-public interface BO {
+import br.com.fiap.controller.Controller;
 
+public interface BO {
+	public abstract String validarExistencia(Controller controller);
 }

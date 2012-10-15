@@ -1,11 +1,14 @@
 package br.com.fiap.dao;
 
-import br.com.fiap.bo.BO;
+import java.sql.SQLException;
+
+import br.com.fiap.controller.Controller;
+import br.com.fiap.model.Model;
 
 public interface DAO {
-	public abstract void deletar(int id);
-	public abstract void inserir(BO bo);
-	public abstract void atualizar(BO bo);
-	public abstract void existe(int id);
-	public abstract void consultar(BO bo);
+	public abstract void deletar(int id) throws SQLException;
+	public abstract void inserir(Controller controler)throws SQLException;
+	public abstract void atualizar(Controller controler)throws SQLException;
+	public abstract Model existe(Controller controller)throws SQLException;
+	public abstract void consultar(Controller controler)throws SQLException;
 }

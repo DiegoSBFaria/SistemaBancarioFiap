@@ -2,19 +2,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html">
-
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title>Login Conta</title>
+	<title>Insert title here</title>
 </h:head>
 <h:body>
 	<h:form>
-		Agencia<br/>
-		<h:inputText value="#{pessoaController.agencia}"></h:inputText><br />
-		Conta<br/>
-		<h:inputText value="#{pessoaController.conta}"></h:inputText> <h:inputText value="#{pessoaController.digito}"></h:inputText><br />
+		Insira a senha:<br />
+		<h:inputSecret value="#{pessoaController.senha}"></h:inputSecret><br />
 		<br/>
-		<h:commandButton value="Entrar" action="#{pessoaController.loginConta}"></h:commandButton>
+		<h:commandButton value="Entrar" action="#{pessoaController.loginSenha}"></h:commandButton>
 	</h:form>
 </h:body>
 </html>

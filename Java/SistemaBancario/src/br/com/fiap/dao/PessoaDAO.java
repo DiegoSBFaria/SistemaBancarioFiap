@@ -1,37 +1,55 @@
 package br.com.fiap.dao;
 
-import br.com.fiap.bo.BO;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.fiap.controller.Controller;
+import br.com.fiap.model.Model;
+import br.com.fiap.factory.*;
 
 public class PessoaDAO implements DAO {
 
 	@Override
-	public void deletar(int id) {
+	public void deletar(int id) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void inserir(BO bo) {
+	public void inserir(Controller controler) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void atualizar(BO bo) {
+	public void atualizar(Controller controler) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void existe(int id) {
+	public Model existe(Controller controller) throws SQLException {
+		
+//		Connection conn = ConnectionFactory.getConnection();
+//		
+//		String sql = "SELECT * FROM profissional ORDER BY nome";
+//		
+//		PreparedStatement stmt = conn.prepareStatement(sql);
+//			
+//
+//		conn.close();
+		
+		return null;		
+	}
+
+	@Override
+	public void consultar(Controller controler) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void consultar(BO bo) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
