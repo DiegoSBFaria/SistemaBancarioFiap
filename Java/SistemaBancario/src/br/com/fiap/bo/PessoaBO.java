@@ -4,33 +4,33 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class PessoaBO implements BO {
-	private String agencia;
-	private String conta;
-	private String digito;
+	private Integer agencia;
+	private Integer conta;
+	private Integer digito;
 
 	public String loginConta(){
 		String msg = "erro";
 		return msg;
 	}
 	
-	public String getDigito() {
+	public Integer getDigito() {
 		return digito;
 	}
 	
-	public void setDigito(String digito) {
+	public void setDigito(Integer digito) {
 		this.digito = digito;
 	}
 
-	public String getAgencia() {
+	public Integer getAgencia() {
 		return agencia;
 	}
-	public void setAgencia(String agencia) {
+	public void setAgencia(Integer agencia) {
 		this.agencia = agencia;
 	}
-	public String getConta() {
+	public Integer getConta() {
 		return conta;
 	}
-	public void setConta(String conta) {
+	public void setConta(Integer conta) {
 		this.conta = conta;
 	}
 }

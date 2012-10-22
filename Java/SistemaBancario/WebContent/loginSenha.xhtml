@@ -9,9 +9,13 @@
 <h:body>
 	<h:form>
 		Insira a senha:<br />
-		<h:inputSecret value="#{pessoaController.senha}"></h:inputSecret><br />
-		<br/>
-		<h:commandButton value="Entrar" action="#{pessoaController.loginSenha}"></h:commandButton>
+		<h:inputSecret value="#{pessoaController.senha}" required="true"
+			requiredMessage="Por favor, preencha a senha." id="erroSenha"></h:inputSecret>
+		<h:message for="erroSenha" />
+		<br />
+		<br />
+		<h:commandButton value="Entrar"
+			action="#{pessoaController.loginSenha}"></h:commandButton>
 	</h:form>
 </h:body>
 </html>
