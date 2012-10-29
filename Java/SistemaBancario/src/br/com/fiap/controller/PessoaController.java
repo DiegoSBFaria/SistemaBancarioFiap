@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import br.com.fiap.dao.PessoaDAO;
 import br.com.fiap.model.Pessoa;
@@ -26,6 +27,7 @@ public class PessoaController implements Controller {
 				msg = "loginSenha";
 				ExternalContext context = FacesContext.getCurrentInstance()
 						.getExternalContext();
+				HttpServletRequest request = (HttpServletRequest) context.getRequest();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
