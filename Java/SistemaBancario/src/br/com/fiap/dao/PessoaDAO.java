@@ -1,13 +1,10 @@
 package br.com.fiap.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import br.com.fiap.controller.Controller;
 import br.com.fiap.model.Model;
-import br.com.fiap.factory.*;
 
 public class PessoaDAO implements DAO {
 
@@ -45,9 +42,8 @@ public class PessoaDAO implements DAO {
 	}
 
 	@Override
-	public void consultar(Controller controler) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	public ArrayList<Model> consultar(Controller controler) throws SQLException {
+		return null;		
 	}
 
 
