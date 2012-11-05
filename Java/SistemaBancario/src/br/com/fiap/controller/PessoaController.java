@@ -38,17 +38,20 @@ public class PessoaController implements Controller {
 
 	public String loginSenha() {
 		String msg = "erro";
-		PessoaDAO dao = new PessoaDAO();
-		try {
-			Pessoa pessoa = (Pessoa) dao.existe(this);
-			if (pessoa == null) {
-				// criar sessão
-
-				msg = "loginSenha";
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		msg = "home";
+//		PessoaDAO dao = new PessoaDAO();
+//		try {
+//			Pessoa pessoa = (Pessoa) dao.existe(this);
+//			if (pessoa == null) {
+//				// criar sessão
+//
+//				msg = "home";
+//			}else{
+//				msg = "home";
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 
 		return msg;
 	}
