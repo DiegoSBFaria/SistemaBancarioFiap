@@ -22,7 +22,7 @@ public class PessoaController implements Controller {
 		PessoaDAO dao = new PessoaDAO();
 		try {
 			Pessoa pessoa = (Pessoa) dao.existe(this);
-			if (pessoa == null) {
+			if (pessoa != null) {
 				// criar sessão
 				msg = "loginSenha";
 				ExternalContext context = FacesContext.getCurrentInstance()
