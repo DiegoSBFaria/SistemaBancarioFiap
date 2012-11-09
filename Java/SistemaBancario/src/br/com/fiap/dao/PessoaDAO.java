@@ -58,6 +58,27 @@ public class PessoaDAO implements DAO {
 		return p;		
 	}
 
+	public boolean verificaSenha(Pessoa pessoa) throws SQLException {
+		Connection conn = ConnectionFactory.getConnection();
+		
+		String sql = "CALL login(?,?)";
+		
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, pessoa.getId());
+		stmt.setInt(2, pessoa.getSenha());
+		
+		ResultSet rs = stmt.executeQuery();
+		boolean success = false;
+		if(rs.first()){
+			pessoa.setNome(rs.getString("nome"));
+			pessoa.setSobrenome(rs.getString("sobrenome"));
+			success = true;
+		}
+		conn.close();
+		
+		return success;		
+	}
+	
 	@Override
 	public ArrayList<Model> consultar(Controller controler) throws SQLException {
 		return null;		
