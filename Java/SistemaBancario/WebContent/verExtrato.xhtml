@@ -12,11 +12,11 @@
 		Lista de extrato <br />
 		<table>
 			<tr>
-				<td>Valor</td>
-				<td>Data</td>
-				<td>Código de Barras</td>
-				<td>Nome</td>
-				<td>Conta</td>
+				<td>#{inter.valor}</td>
+				<td>#{inter.data}</td>
+				<td>#{inter.codigo}</td>
+				<td>#{inter.nome}</td>
+				<td>#{inter.conta}</td>
 			</tr>
 			<ui:repeat var="conta" value="#{extratoController.extratos}">
 				<tr>

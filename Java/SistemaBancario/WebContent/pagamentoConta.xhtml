@@ -9,25 +9,27 @@
 </h:head>
 <h:body>
 	<h:form>
-		Saldo atual: #{pagamentoController.saldo}<br />
-		Valor: <br />
+		#{inter.saldoAtual}: #{pagamentoController.saldo}<br />
+		#{inter.valor}: <br />
 		<h:inputText value="#{pagamentoController.valor}" required="true"
-			requiredMessage="Por favor, insira o valor do pagamento."
-			converterMessage="Por favor, insira um valor numérico" id="msgValor">
+			requiredMessage="#{inter.valorRequiredMessage}"
+			converterMessage="#{inter.convertMessage}" id="msgValor">
 		</h:inputText>
 		<h:message for="msgValor" />
 		<br />
 		#{inter.codigo}: <br />
 		<h:inputText value="#{pagamentoController.codigo}" required="true"
-			requiredMessage="Por favor, insira o codigo de barras do pagamento."
-			converterMessage="Por favor, insira um valor numérico" id="msgCodigo">
+			requiredMessage="#{inter.requiredCodigo}"
+			converterMessage="#{inter.convertMessage}" id="msgCodigo">
 		</h:inputText>
 		<h:message for="msgCodigo" />
 		<br />
 		#{inter.data}: <br />
 		<h:inputText value="#{pagamentoController.data}"
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+			required="true"
+			requiredMessage="#{inter.requiredData}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.validatorData}"
 			id="msgPeriodo">
 			<f:validateLength minimum="7" maximum="8" />
 		</h:inputText>
@@ -35,15 +37,15 @@
 		<br />
 		#{inter.senha}: <br />
 		<h:inputSecret value="#{pagamentoController.senha}" required="true"
-			requiredMessage="Por favor, preencha a senha."
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira sua senha de 4 digitos" id="erroSenha"
+			requiredMessage="#{inter.senhaRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.senhaSizeMessage}" id="erroSenha"
 			validator="#{pagamentoController.validateSenha}">
 			<f:validateLength minimum="4" maximum="4" />
 		</h:inputSecret>
 		<h:message for="erroSenha" />
 		<br />
-		<h:commandButton value="Efetuar pagamento"
+		<h:commandButton value="#{inter.efetuarPag}"
 			action="#{pagamentoController.efetuarPagamento}" />
 	</h:form>
 </h:body>

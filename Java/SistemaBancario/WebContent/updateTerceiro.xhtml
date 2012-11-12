@@ -9,45 +9,47 @@
 </h:head>
 <h:body>
 	<h:form>
-		Nome:  <br />
+		#{inter.nome}:  <br />
 		<h:inputText value="#{terceiroUController.conta.nome}" required="true"
-			requiredMessage="Por favor, insira o nome da conta" id="msgNome">
-			</h:inputText>
+			requiredMessage="#{inter.nomeRequiredMessage}" id="msgNome">
+		</h:inputText>
 		<h:message for="msgNome" />
 		<br />
-		Agencia: <br />
-		<h:inputText value="#{terceiroUController.conta.agencia}" required="true"
-			requiredMessage="Por favor, insira o numero da agência."
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma agencia valida com 4 digitos"
-			id="msgAgencia">
+		#{inter.agencia}: <br />
+		<h:inputText value="#{terceiroUController.conta.agencia}"
+			required="true" requiredMessage="#{inter.agenciaRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.agenciaValidateMessage}" id="msgAgencia">
 			<f:validateLength minimum="4" maximum="4" />
 		</h:inputText>
 		<h:message for="msgAgencia" />
 		<br />
-		Conta: <br />
-		<h:inputText value="#{terceiroUController.conta.conta}" required="true"
-			id="msgConta" requiredMessage="Por favor, insira o numero da conta"
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma conta de 5 digitos">
+		#{inter.conta}: <br />
+		<h:inputText value="#{terceiroUController.conta.conta}"
+			required="true" id="msgConta"
+			requiredMessage="#{inter.contaRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.contaValidatorMessage}">
 			<f:validateLength minimum="5" maximum="5" />
 		</h:inputText>
 		<h:message for="msgConta" />
 		<br />
-		Digito: <br />
-		<h:inputText value="#{terceiroUController.conta.digito}" required="true"
-			id="msgDigito"
-			requiredMessage="Por favor, insira o numero do digito."
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira somente 1 dígito">
+		#{inter.digito}: <br />
+		<h:inputText value="#{terceiroUController.conta.digito}"
+			required="true" id="msgDigito"
+			requiredMessage="#{inter.digitoRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.digitoValidatorMessage}">
 			<f:validateLength minimum="1" maximum="1" />
 		</h:inputText>
 
 		<h:message for="msgDigito" />
 		<br />
 		<br />
-		<h:commandButton value="Atualizar" action="#{terceiroUController.atualizar}" />
-		<h:commandButton value="Excluir" action="#{terceiroUController.excluir}" />
+		<h:commandButton value="#{inter.atualizar}"
+			action="#{terceiroUController.atualizar}" />
+		<h:commandButton value="#{inter.excluir}"
+			action="#{terceiroUController.excluir}" />
 	</h:form>
 </h:body>
 </html>
