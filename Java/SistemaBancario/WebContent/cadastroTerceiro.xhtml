@@ -11,7 +11,9 @@
 	<h:form>
 		Nome:  <br />
 		<h:inputText value="#{terceiroController.nome}" required="true"
-			requiredMessage="" />
+			requiredMessage="Por favor, insira o nome da conta" id="msgNome">
+			</h:inputText>
+		<h:message for="msgNome" />
 		<br />
 		Agencia: <br />
 		<h:inputText value="#{terceiroController.agencia}" required="true"
@@ -44,7 +46,7 @@
 		<h:message for="msgDigito" />
 		<br />
 		<br />
-		<h:commandButton value="Cadastrar" />
+		<h:commandButton value="Cadastrar" action="#{terceiroController.cadastrar}" />
 	</h:form>
 </h:body>
 </html>

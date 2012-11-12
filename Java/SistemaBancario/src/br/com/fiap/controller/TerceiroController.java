@@ -4,9 +4,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import br.com.fiap.dao.TerceiraDao;
 import br.com.fiap.model.Model;
+import br.com.fiap.util.Util;
 
 @ManagedBean
 public class TerceiroController implements Controller {
@@ -18,6 +22,27 @@ public class TerceiroController implements Controller {
 
 	private ArrayList<Model> contas;
 
+	public String cadastrar(){
+		String retorno = "erro";
+		ExternalContext context = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		HttpServletRequest request = (HttpServletRequest) context.getRequest();
+		
+		if(Util.isSessionValid(request)){
+			TerceiraDao dao = new TerceiraDao();
+			try {
+				dao.inserir(this);
+				retorno = "contaTerceiro";
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			retorno = "login";
+		}
+		return retorno;
+	}
+	
 	public ArrayList<Model> getContas() {
 		TerceiraDao dao = new TerceiraDao();
 		try {
