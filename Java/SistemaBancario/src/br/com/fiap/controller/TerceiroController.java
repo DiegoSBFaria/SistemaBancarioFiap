@@ -3,6 +3,7 @@ package br.com.fiap.controller;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -12,7 +13,9 @@ import br.com.fiap.dao.TerceiraDao;
 import br.com.fiap.model.Model;
 import br.com.fiap.util.Util;
 
+@ApplicationScoped
 @ManagedBean
+
 public class TerceiroController implements Controller {
 
 	private String nome;

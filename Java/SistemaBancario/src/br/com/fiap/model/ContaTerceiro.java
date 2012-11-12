@@ -6,6 +6,8 @@ public class ContaTerceiro implements Model{
 	private int conta;
 	private int agencia;
 	private int digito;
+	private int id_conta;
+	private Integer id_conta_ref;
 
 	public String getNome() {
 		return nome;
@@ -45,6 +47,22 @@ public class ContaTerceiro implements Model{
 
 	public void setDigito(int digito) {
 		this.digito = digito;
+	}
+
+	public int getId_conta() {
+		return id_conta;
+	}
+
+	public void setId_conta(int id_conta) {
+		this.id_conta = id_conta;
+	}
+
+	public Integer getId_conta_ref() {
+		return id_conta_ref;
+	}
+
+	public void setId_conta_ref(Integer id_conta_ref) {
+		this.id_conta_ref = id_conta_ref;
 	}
 	
 }
