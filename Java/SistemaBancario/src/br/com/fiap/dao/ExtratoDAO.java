@@ -45,7 +45,6 @@ public class ExtratoDAO implements DAO {
 
 	@Override
 	public ArrayList<Model> consultar(Controller controler) throws SQLException {
-		// TODO Auto-generated method stub
 		ExtratoController extrato = (ExtratoController) controler;
 		Connection conn = ConnectionFactory.getConnection();
 

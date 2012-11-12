@@ -4,12 +4,47 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Cadastrar nova conta</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cadastrar nova conta</title>
 </h:head>
 <h:body>
 	<h:form>
-		
+		Nome:  <br />
+		<h:inputText value="#{terceiroController.nome}" required="true"
+			requiredMessage="" />
+		<br />
+		Agencia: <br />
+		<h:inputText value="#{terceiroController.agencia}" required="true"
+			requiredMessage="Por favor, insira o numero da agência."
+			converterMessage="Por favor, insira um valor numérico"
+			validatorMessage="Insira uma agencia valida com 4 digitos"
+			id="msgAgencia">
+			<f:validateLength minimum="4" maximum="4" />
+		</h:inputText>
+		<h:message for="msgAgencia" />
+		<br />
+		Conta: <br />
+		<h:inputText value="#{terceiroController.conta}" required="true"
+			id="msgConta" requiredMessage="Por favor, insira o numero da conta"
+			converterMessage="Por favor, insira um valor numérico"
+			validatorMessage="Insira uma conta de 5 digitos">
+			<f:validateLength minimum="5" maximum="5" />
+		</h:inputText>
+		<h:message for="msgConta" />
+		<br />
+		Digito: <br />
+		<h:inputText value="#{terceiroController.digito}" required="true"
+			id="msgDigito"
+			requiredMessage="Por favor, insira o numero do digito."
+			converterMessage="Por favor, insira um valor numérico"
+			validatorMessage="Insira somente 1 dígito">
+			<f:validateLength minimum="1" maximum="1" />
+		</h:inputText>
+
+		<h:message for="msgDigito" />
+		<br />
+		<br />
+		<h:commandButton value="Cadastrar" />
 	</h:form>
 </h:body>
 </html>
