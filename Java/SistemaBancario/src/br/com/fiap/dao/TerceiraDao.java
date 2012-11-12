@@ -23,8 +23,13 @@ public class TerceiraDao implements DAO {
 
 	@Override
 	public void deletar(int id) throws SQLException {
-		// TODO Auto-generated method stub
+		Connection conn = ConnectionFactory.getConnection();
 
+		String sql = "CALL removerTerceiro(?)";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+
+		stmt.setInt(1, id);
+		stmt.executeQuery();
 	}
 
 	@Override
@@ -69,14 +74,14 @@ public class TerceiraDao implements DAO {
 
 		Connection conn = ConnectionFactory.getConnection();
 
-		String sql = "CALL atualizarTerceiro(?, ?, ?, ?, ?, ?)";
+		String sql = "CALL atualizarTerceiro(?, ?, ?, ?, ?, ?, ?)";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 
 		stmt.setInt(1, terceiro.getConta().getId());
 		stmt.setString(2, terceiro.getConta().getNome());
 		stmt.setString(3, String.valueOf(terceiro.getConta().getConta()));
 		stmt.setString(4, String.valueOf(terceiro.getConta().getAgencia()));
-		stmt.setString(5, String.valueOf(terceiro.getConta().getAgencia()));
+		stmt.setString(5, String.valueOf(terceiro.getConta().getDigito()));
 		stmt.setInt(6, terceiro.getConta().getId_conta());
 		if(terceiro.getConta().getId_conta_ref() != null)
 			stmt.setInt(7, terceiro.getConta().getId_conta_ref());

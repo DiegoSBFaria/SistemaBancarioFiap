@@ -37,11 +37,29 @@ public class TerceiroUController implements Controller {
 		} else {
 			retorno = "login";
 		}
+		conta = null;
 		return retorno;
 	}
 
 	public String excluir() {
-		return null;
+		String retorno = "erro";
+		ExternalContext context = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		HttpServletRequest request = (HttpServletRequest) context.getRequest();
+
+		if (Util.isSessionValid(request)) {
+			TerceiraDao dao = new TerceiraDao();
+			try {
+				dao.deletar(getConta().getId());
+				retorno = "contaTerceiro";
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} else {
+			retorno = "login";
+		}
+		conta = null;
+		return retorno;
 	}
 
 	public ContaTerceiro getConta() {
