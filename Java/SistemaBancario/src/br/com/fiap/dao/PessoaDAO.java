@@ -90,7 +90,7 @@ Connection conn = ConnectionFactory.getConnection();
 		
 		ResultSet rs = stmt.executeQuery();
 		if(rs.first()){
-			retorno = String.valueOf(rs.getInt(1));
+			retorno = String.valueOf(rs.getDouble("saldo"));
 		}
 		
 		conn.close();
