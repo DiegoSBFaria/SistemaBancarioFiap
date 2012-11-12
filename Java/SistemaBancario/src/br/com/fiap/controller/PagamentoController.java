@@ -9,7 +9,6 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.validator.ValidatorException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import br.com.fiap.dao.PessoaDAO;

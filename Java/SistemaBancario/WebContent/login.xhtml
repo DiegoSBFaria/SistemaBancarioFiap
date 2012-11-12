@@ -10,31 +10,31 @@
 </h:head>
 <h:body>
 	<h:form>
-		Agencia<br />
+		#{inter.agencia}<br />
 		<h:inputText value="#{pessoaController.agencia}" required="true"
-			requiredMessage="Por favor, insira o numero da agência."
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma agencia valida com 4 digitos"
+			requiredMessage="#{inter.agenciaRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.agenciaValidateMessage}"
 			id="msgAgencia">
 			<f:validateLength minimum="4" maximum="4"/>
 			</h:inputText>
 		<h:message for="msgAgencia" />
 		<br />
-		Conta<br />
+		#{inter.conta}<br />
 		<h:inputText value="#{pessoaController.conta}" required="true"
 			id="msgConta"
-			requiredMessage="Por favor, insira o numero da conta"
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma conta de 5 digitos">
+			requiredMessage="#{inter.contaRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.contaValidatorMessage}">
 			<f:validateLength minimum="5" maximum="5"/>
 			</h:inputText>
 		<h:message for="msgConta" />
 		<br />
 		<h:inputText value="#{pessoaController.digito}" required="true"
 			id="msgDigito"
-			requiredMessage="Por favor, insira o numero do digito."
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira somente 1 dígito">
+			requiredMessage="#{inter.digitoRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.digitoValidatorMessage}">
 			<f:validateLength minimum="1" maximum="1"/>
 			</h:inputText>
 

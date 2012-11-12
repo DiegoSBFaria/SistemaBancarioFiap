@@ -9,12 +9,12 @@
 </h:head>
 <h:body>
 	<h:form>
-	Bem-Vindo #{pessoaController.pessoa.nome} #{pessoaController.pessoa.sobrenome}
+	#{inter.bemVindo} #{pessoaController.pessoa.nome} #{pessoaController.pessoa.sobrenome}
 	<table>
 			<tr>
 				<td>
 					<ul>
-						<li><h:commandButton value="Contas de Terceiros"
+						<li><h:commandButton value="#{inter.contaTerceiro}"
 								action="#{homeController.terceiro}"></h:commandButton></li>
 						<li><h:commandButton value="Visualização de Saldo"
 								action="#{homeController.saldo}"></h:commandButton></li>

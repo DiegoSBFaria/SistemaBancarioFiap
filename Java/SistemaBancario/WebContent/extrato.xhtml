@@ -9,27 +9,27 @@
 </h:head>
 <h:body>
 	<h:form>
-		Período pré-definido:<br />
+		#{inter.periodo}:<br />
 		<h:inputText value="#{extratoController.periodo}"
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.validatorData}"
 			id="msgPeriodo">
 			<f:validateLength minimum="7" maximum="8" />
 		</h:inputText>
 		<h:message for="msgPeriodo" />
 		<br />
-		Entre datas:<br />
-		Inicio: <h:inputText value="#{extratoController.dataInicio}"
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+		#{inter.entreData}:<br />
+		#{inter.inicio}: <h:inputText value="#{extratoController.dataInicio}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.validatorData}"
 			id="msgInicio">
 			<f:validateLength minimum="7" maximum="8" />
 		</h:inputText>
 		<h:message for="msgInicio" />
 		<br />
-		Fim: <h:inputText value="#{extratoController.dataFim}"
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+		#inter.fim: <h:inputText value="#{extratoController.dataFim}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.validatorData}"
 			id="msgFim">
 			<f:validateLength minimum="7" maximum="8" />
 		</h:inputText>
