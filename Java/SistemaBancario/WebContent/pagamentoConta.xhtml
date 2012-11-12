@@ -17,14 +17,14 @@
 		</h:inputText>
 		<h:message for="msgValor" />
 		<br />
-		Codigo de barras: <br />
+		#{inter.codigo}: <br />
 		<h:inputText value="#{pagamentoController.codigo}" required="true"
 			requiredMessage="Por favor, insira o codigo de barras do pagamento."
 			converterMessage="Por favor, insira um valor numérico" id="msgCodigo">
 		</h:inputText>
 		<h:message for="msgCodigo" />
 		<br />
-		Data: <br />
+		#{inter.data}: <br />
 		<h:inputText value="#{pagamentoController.data}"
 			converterMessage="Por favor, insira um valor numérico"
 			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
@@ -33,7 +33,7 @@
 		</h:inputText>
 		<h:message for="msgPeriodo" />
 		<br />
-		Senha: <br />
+		#{inter.senha}: <br />
 		<h:inputSecret value="#{pagamentoController.senha}" required="true"
 			requiredMessage="Por favor, preencha a senha."
 			converterMessage="Por favor, insira um valor numérico"

@@ -9,18 +9,18 @@
 </h:head>
 <h:body>
 	<h:form>
-		Insira a senha:<br />
+		#{inter.insiraSenha}:<br />
 		<h:inputSecret value="#{pessoaController.senha}" required="true"
-			requiredMessage="Por favor, preencha a senha."
-			converterMessage="Por favor, insira um valor numérico"
-			validatorMessage="Insira sua senha de 4 digitos"
+			requiredMessage="#{inter.senhaRequiredMessage}"
+			converterMessage="#{inter.convertMessage}"
+			validatorMessage="#{inter.senhaSizeMessage}"
 			id="erroSenha">
 			<f:validateLength minimum="4" maximum="4" />
 		</h:inputSecret>
 		<h:message for="erroSenha" />
 		<br />
 		<br />
-		<h:commandButton value="Entrar"
+		<h:commandButton value="OK"
 			action="#{pessoaController.loginSenha}"></h:commandButton>
 	</h:form>
 </h:body>
