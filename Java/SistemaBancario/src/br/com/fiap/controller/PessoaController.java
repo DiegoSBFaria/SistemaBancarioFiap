@@ -36,7 +36,7 @@ public class PessoaController implements Controller {
 				ExternalContext context = FacesContext.getCurrentInstance()
 						.getExternalContext();
 				HttpServletResponse response = (HttpServletResponse) context.getResponse();
-				Cookie cookie = new Cookie("entrou", "1");
+				Cookie cookie = new Cookie("entrou", String.valueOf(pessoa.getId()));
 				cookie.setMaxAge(1000);
 				response.addCookie(cookie);
 			}

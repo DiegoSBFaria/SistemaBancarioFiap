@@ -10,7 +10,7 @@ public class Util {
 		Cookie cookie = null;  
         if (cookies != null) {
         	for (Cookie ck : cookies) {  
-                if (ck.getName() != null && ck.getName().equals("entrou") && ck.getValue().equals("1")) {  
+                if (ck.getName() != null && ck.getName().equals("entrou") && !ck.getValue().equalsIgnoreCase(null)) {  
                     cookie = ck;  
                 }  
             }  
@@ -25,7 +25,7 @@ public class Util {
         	for (Cookie ck : cookies) {  
                 if (ck.getName() != null && ck.getName().equals("entrou")) {   
                     ck.setMaxAge(0);
-                    ck.setValue("");
+                    ck.setValue(null);
                 }  
             }  
         } 
