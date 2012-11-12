@@ -7,24 +7,24 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Contas de Terceiro</title>
 </h:head>
-<h:form>
-		Lista de Contas de terceiro <br />
-	<table>
-		<tr>
-			<td>id</td>
-			<td>Nome</td>
-			<td>Editar</td>
-		</tr>
-		<ui:repeat var="conta" value="#{terceiroController.contas}">
-			<tr>
-				<td>#{conta.id}</td>
-				<td>#{conta.nome}</td>
-				<td>Editar/Excluir</td>
-			</tr>
-		</ui:repeat>
-	</table>
-	<h:commandButton value="Cadastrar Nova conta" action="#{terceiroController.cadastrar}" />
-</h:form>
 <h:body>
+	<h:form>
+		Lista de Contas de terceiro <br />
+		<table>
+			<tr>
+				<td>id</td>
+				<td>Nome</td>
+				<td>Editar</td>
+			</tr>
+			<ui:repeat var="conta" value="#{terceiroController.contas}">
+				<tr>
+					<td>#{conta.id}</td>
+					<td>#{conta.nome}</td>
+					<td>Editar/Excluir</td>
+				</tr>
+			</ui:repeat>
+		</table>
+		<a href="cadastroTerceiro.jsf">Cadastrar nova conta</a>
+	</h:form>
 </h:body>
 </html>

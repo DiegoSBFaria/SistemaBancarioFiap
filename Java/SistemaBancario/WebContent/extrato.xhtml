@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Visualização de Extrato</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Visualização de Extrato</title>
 </h:head>
 <h:body>
-
+	<h:form>
+		Período pré-definido:<br />
+		<h:inputText value="#{extratoController.periodo}"
+			converterMessage="Por favor, insira um valor numérico"
+			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+			id="msgPeriodo">
+			<f:validateLength minimum="8" maximum="8" />
+		</h:inputText>
+		<h:message for="msgPeriodo" />
+		<br />
+		Entre datas:<br />
+		Inicio: <h:inputText value="#{extratoController.dataInicio}"
+			converterMessage="Por favor, insira um valor numérico"
+			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+			id="msgInicio">
+			<f:validateLength minimum="8" maximum="8" />
+		</h:inputText>
+		<h:message for="msgInicio" />
+		<br />
+		Fim: <h:inputText value="#{extratoController.dataFim}"
+			converterMessage="Por favor, insira um valor numérico"
+			validatorMessage="Insira uma data valida com 8 digitos sem '/'"
+			id="msgFim">
+			<f:validateLength minimum="8" maximum="8" />
+		</h:inputText>
+		<h:message for="msgFim" />
+		<br />
+		<h:commandButton value="Filtrar" action="#{extratoController.filtrar}" />
+	</h:form>
 </h:body>
 </html>

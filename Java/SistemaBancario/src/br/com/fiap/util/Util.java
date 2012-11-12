@@ -30,4 +30,16 @@ public class Util {
             }  
         } 
 	}
+	
+	public static String getContaID(HttpServletRequest req){
+        Cookie cookies[] = req.getCookies(); 
+        if (cookies != null) {
+        	for (Cookie ck : cookies) {  
+                if (ck.getName() != null && ck.getName().equals("entrou")) {   
+                    return ck.getValue();
+                }  
+            }  
+        } 
+        return null;
+	}
 }

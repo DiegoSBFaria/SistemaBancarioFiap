@@ -4,20 +4,35 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Bem-Vindo #{pessoaController.pessoa.nome} #{pessoaController.pessoa.sobrenome}</title>
+	<title>Bem-Vindo #{pessoaController.pessoa.nome}
+		#{pessoaController.pessoa.sobrenome}</title>
 </h:head>
 <h:body>
 	<h:form>
 	Bem-Vindo #{pessoaController.pessoa.nome} #{pessoaController.pessoa.sobrenome}
-		<ul>
-			<li><a href="contaTerceiro.jsf">Contas de Terceiro</a></li>
-			<li><a href="saldo.jsf">Visualização de Saldo</a></li>
-			<li><a href="extrato.jsf">Visualização de extrato</a></li>
-			<li><a href="pagamentoConta.jsf">Pagamento de conta</a></li>
-			<li><a href="transferencia.jsf">Transferencia entre contas</a></li>
-			<li><a href="comprovante.jsf">Comprovantes de transações</a></li>
-			<li><a href="agendamento.jsf">Agendamentos</a></li>
-		</ul>
+	<table>
+			<tr>
+				<td>
+					<ul>
+						<li><h:commandButton value="Contas de Terceiros"
+								action="#{homeController.terceiro}"></h:commandButton></li>
+						<li><h:commandButton value="Visualização de Saldo"
+								action="#{homeController.saldo}"></h:commandButton></li>
+						<li><h:commandButton value="Visualização de Extrato"
+								action="#{homeController.extrato}"></h:commandButton></li>
+						<li><h:commandButton value="Pagamento de Conta"
+								action="#{homeController.pagamento}"></h:commandButton></li>
+						<li><h:commandButton value="Transferência entre contas"
+								action="#{homeController.transferencia}"></h:commandButton></li>
+						<li><h:commandButton value="Comprovantes de transações"
+								action="#{homeController.comprovante}"></h:commandButton></li>
+						<li><h:commandButton value="Agendamentos"
+								action="#{homeController.agendamento}"></h:commandButton></li>
+					</ul>
+				</td>
+				<td>#{pessoaController.pessoa.saldo}</td>
+			</tr>
+		</table>
 		<h:commandButton value="Logout" action="#{homeController.logout}"></h:commandButton>
 	</h:form>
 </h:body>

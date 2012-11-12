@@ -12,7 +12,7 @@ import br.com.fiap.model.Model;
 
 public class TerceiroController implements Controller{
 	private ArrayList<Model> contas;
-
+	
 	public ArrayList<Model> getContas() {
 		//if(contas == null){
 			TerceiraDao dao = new TerceiraDao();
