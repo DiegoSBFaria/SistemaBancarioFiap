@@ -37,7 +37,7 @@ public class PessoaController implements Controller {
 						.getExternalContext();
 				HttpServletResponse response = (HttpServletResponse) context.getResponse();
 				Cookie cookie = new Cookie("entrou", "1");
-				cookie.setMaxAge(100);
+				cookie.setMaxAge(1000);
 				response.addCookie(cookie);
 			}
 		} catch (SQLException e) {
