@@ -79,6 +79,24 @@ public class PessoaDAO implements DAO {
 		return success;		
 	}
 	
+	public String getSaldo(int id) throws SQLException{
+		String retorno = null;
+Connection conn = ConnectionFactory.getConnection();
+		
+		String sql = "CALL saldo(?)";
+		
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, id);
+		
+		ResultSet rs = stmt.executeQuery();
+		if(rs.first()){
+			retorno = String.valueOf(rs.getInt(1));
+		}
+		
+		conn.close();
+		return retorno;
+	}
+	
 	@Override
 	public ArrayList<Model> consultar(Controller controler) throws SQLException {
 		return null;		
