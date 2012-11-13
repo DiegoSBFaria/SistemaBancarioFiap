@@ -60,6 +60,7 @@ public class PessoaDAO implements DAO {
 			p.setAgencia(pessoa.getAgencia());
 			p.setConta(pessoa.getConta());
 			p.setDigito(pessoa.getDigito());
+			p.setTipoConta(rs.getString("tipo_conta"));
 		}
 		conn.close();
 

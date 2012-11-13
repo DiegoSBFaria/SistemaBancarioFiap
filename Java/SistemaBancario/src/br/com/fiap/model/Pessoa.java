@@ -11,11 +11,21 @@ public class Pessoa implements Model {
 	private int agencia;
 	private int senha;
 	private String nome;
+
 	private String sobrenome;
 	private String saldo;
+	private String tipoConta;
 
 	public int getId() {
 		return id;
+	}
+
+	public String getTipoConta() {
+		return tipoConta;
+	}
+
+	public void setTipoConta(String tipoConta) {
+		this.tipoConta = tipoConta;
 	}
 
 	public void setId(int id) {

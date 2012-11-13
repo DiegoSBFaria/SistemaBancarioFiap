@@ -28,11 +28,13 @@ public class PagamentoController implements Controller {
 		ExternalContext context = FacesContext.getCurrentInstance()
 				.getExternalContext();
 		HttpServletRequest request = (HttpServletRequest) context.getRequest();
-		
+	
+		Map<String, Object> cookies = context.getSessionMap();
+		PessoaController pessoa = (PessoaController)cookies.get("pessoaController");
 		if(Util.isSessionValid(request)){
 			PessoaDAO dao = new PessoaDAO();
 			try {
-				if(Double.parseDouble(getSaldo()) >= valor){
+				if(Double.parseDouble(getSaldo()) >= valor && pessoa.getPessoa().getTipoConta().equalsIgnoreCase("c")){
 					dao.efetuarPagamento(this);
 					retorno = "home";
 				}
