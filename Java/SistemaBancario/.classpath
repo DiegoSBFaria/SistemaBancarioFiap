@@ -3,11 +3,13 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Applications/eclipse/plugins/javax.servlet_2.5.0.v201103041518.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/caioflandau/Documents/Dev/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/caioflandau/Documents/Dev/apache-tomcat-7.0.32/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/caioflandau/Documents/Dev/javax.faces-2.1.14.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

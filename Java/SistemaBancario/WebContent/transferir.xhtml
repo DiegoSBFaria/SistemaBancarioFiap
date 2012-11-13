@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Contas de Terceiro</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:form>
+		#{inter.agencia}<br />
+			<h:inputText value="#{transacaoController.agencia}" required="true"
+				requiredMessage="#{inter.agenciaRequiredMessage}"
+				converterMessage="#{inter.convertMessage}"
+				validatorMessage="#{inter.agenciaValidateMessage}" id="msgAgencia">
+				<f:validateLength minimum="4" maximum="4" />
+			</h:inputText>
+			<h:message for="msgAgencia" />
+			<br />
+		#{inter.conta}<br />
+			<h:inputText value="#{transacaoController.conta}" required="true"
+				id="msgConta" requiredMessage="#{inter.contaRequiredMessage}"
+				converterMessage="#{inter.convertMessage}"
+				validatorMessage="#{inter.contaValidatorMessage}">
+				<f:validateLength minimum="5" maximum="5" />
+			</h:inputText>
+			<h:message for="msgConta" />
+			<br />
+			<h:inputText value="#{transacaoController.digito}" required="true"
+				id="msgDigito" requiredMessage="#{inter.digitoRequiredMessage}"
+				converterMessage="#{inter.convertMessage}"
+				validatorMessage="#{inter.digitoValidatorMessage}">
+				<f:validateLength minimum="1" maximum="1" />
+			</h:inputText>
+
+			<h:message for="msgDigito" />
+			<br />
+			<br />
+			<h:commandButton value="Entrar"
+				action="#{transacaoController.transferirValor}"></h:commandButton>
+		</h:form>
+	</h:form>
+</h:body>
+</html>
