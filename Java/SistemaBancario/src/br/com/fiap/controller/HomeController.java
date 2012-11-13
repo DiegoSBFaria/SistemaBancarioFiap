@@ -66,7 +66,7 @@ public class HomeController implements Controller {
 				.getExternalContext();
 		HttpServletRequest request = (HttpServletRequest) context.getRequest();
 		if (Util.isSessionValid(request)) {
-			retorno = "transferencia";
+			retorno = "transferir";
 		}
 		return retorno;
 	}

@@ -37,6 +37,31 @@
 			</h:inputText>
 
 			<h:message for="msgDigito" />
+			<br />#{inter.valor}: <br />
+			<h:inputText value="#{transacaoController.valor}" required="true"
+				requiredMessage="#{inter.valorRequiredMessage}"
+				converterMessage="#{inter.convertMessage}" id="msgValor">
+			</h:inputText>
+			<h:message for="msgValor" />
+			<br />
+		#{inter.data}: <br />
+			<h:inputText value="#{transacaoController.data}" required="true"
+				requiredMessage="#{inter.requiredData}"
+				converterMessage="#{inter.convertMessage}"
+				validatorMessage="#{inter.validatorData}" id="msgPeriodo">
+				<f:validateLength minimum="7" maximum="8" />
+			</h:inputText>
+			<h:message for="msgPeriodo" />
+			<br />
+		#{inter.senha}: <br />
+			<h:inputSecret value="#{transacaoController.senha}" required="true"
+				requiredMessage="#{inter.senhaRequiredMessage}"
+				converterMessage="#{inter.convertMessage}"
+				validatorMessage="#{inter.senhaSizeMessage}" id="erroSenha"
+				validator="#{pagamentoController.validateSenha}">
+				<f:validateLength minimum="4" maximum="4" />
+			</h:inputSecret>
+			<h:message for="erroSenha" />
 			<br />
 			<br />
 			<h:commandButton value="Entrar"

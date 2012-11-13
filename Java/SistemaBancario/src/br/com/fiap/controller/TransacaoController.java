@@ -1,8 +1,14 @@
 package br.com.fiap.controller;
 
 import java.sql.SQLException;
+import java.util.Map;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 
 import br.com.fiap.dao.TransacaoDAO;
 import br.com.fiap.model.Pessoa;
@@ -59,6 +65,11 @@ public class TransacaoController implements Controller {
 	}
 
 	public Pessoa getPessoa() {
+		ExternalContext externalContext = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		Map<String, Object> cookies = externalContext.getSessionMap();
+		PessoaController p = (PessoaController)cookies.get("pessoaController");
+		pessoa = p.getPessoa();
 		return pessoa;
 	}
 
@@ -74,7 +85,19 @@ public class TransacaoController implements Controller {
 		this.valor = valor;
 	}
 	
-	
+
+
+	public void validateSenha(FacesContext context, UIComponent componentToValidate, Object value){
+
+		ExternalContext externalContext = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		Map<String, Object> cookies = externalContext.getSessionMap();
+		PessoaController pessoa = (PessoaController)cookies.get("pessoaController");
+		if(senha != pessoa.getSenha()){
+			FacesMessage message = new FacesMessage("Senhas incompat’veis.");
+			throw new ValidatorException(message);
+		}
+	}
 	
 	
 }

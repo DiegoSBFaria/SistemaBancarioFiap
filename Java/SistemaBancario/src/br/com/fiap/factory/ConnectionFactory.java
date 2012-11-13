@@ -21,9 +21,9 @@ public class ConnectionFactory {
 
 	public static Connection getConnection() throws SQLException{
 		
-		String server = "174.120.239.188";
-		String database = "merca392_banco_fiap";
-		String usuario = "merca392_fiap";
+		String server = "localhost";
+		String database = "banco_fiap";
+		String usuario = "fiap";
 		String senha = "fiap123";
 
 		String url = "jdbc:mysql://" + server + "/" + database;
