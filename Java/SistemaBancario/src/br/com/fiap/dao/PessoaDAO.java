@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import br.com.fiap.controller.Controller;
 import br.com.fiap.controller.PagamentoController;
 import br.com.fiap.controller.PessoaController;
+import br.com.fiap.controller.TransacaoController;
 import br.com.fiap.factory.ConnectionFactory;
+import br.com.fiap.model.Comprovante;
 import br.com.fiap.model.Model;
 import br.com.fiap.model.Pessoa;
 import br.com.fiap.util.Util;
@@ -124,9 +126,53 @@ public class PessoaDAO implements DAO {
 		conn.close();
 	}
 
+	public void efetuarTransacao(TransacaoController controller)
+			throws SQLException {
+
+		ExternalContext context = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		HttpServletRequest request = (HttpServletRequest) context.getRequest();
+		Connection conn = ConnectionFactory.getConnection();
+		//transferencia(IN _id_conta INT, IN _agencia_destino INT, _numero_conta_destino INT, _digito_conta_destino INT, _valor INT)
+		String sql = "CALL transferencia(?,?, ?, ?)";
+
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, Integer.parseInt(Util.getContaID(request)));
+//		stmt.setDouble(2, controller.getValor());
+//		stmt.setString(3, controller.getCodigo());
+//		stmt.setString(4, String.valueOf(controller.getData()));
+
+		stmt.executeQuery();
+		
+		conn.close();
+	}
+
 	@Override
 	public ArrayList<Model> consultar(Controller controler) throws SQLException {
 		return null;
+	}
+	public ArrayList<Comprovante> getComprovante() throws SQLException {
+		Connection conn = ConnectionFactory.getConnection();
+		ArrayList<Comprovante> comprovante = new ArrayList<Comprovante>();
+		ExternalContext context = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		HttpServletRequest request = (HttpServletRequest) context.getRequest();
+		String sql = "CALL comprovanteTransacao(?)";
+
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, Integer.parseInt(Util.getContaID(request)));
+
+		ResultSet rs = stmt.executeQuery();
+		while (rs.next()) {
+			Comprovante p = new Comprovante();
+			p.setValor(rs.getString("valor"));
+			p.setData(rs.getInt("data"));
+			p.setCodigoBarra(rs.getString("codigo_barras"));
+			p.setNome(rs.getString("nome_terceiro"));
+			p.setNumero(rs.getString("conta_terceiro"));
+		}
+		conn.close();
+		return comprovante;
 	}
 
 }
